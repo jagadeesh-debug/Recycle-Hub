@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-black text-white font-sans">
+
+  <div class="container mx-auto px-4 py-8 flex justify-center items-center h-screen">
+    <div class="max-w-md mx-auto bg-black border-2 border-yellow-500 box-shadow-yellow overflow-hidden w-1/4 sm:max-w-lg lg:max-w-3xl">
+      <div class="relative">
+        <img src="p1.jpeg" alt="User Image" class="w-full h-48 object-cover object-center">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="absolute bottom-0 left-0 right-0 text-center">
+          <p class="text-white font-bold text-lg">ABHI</p>
+        </div>
+      </div>
+      <div class="p-4">
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2 text-yellow-500">Name:</label>
+          <p class="text-lg">John Doe</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2 text-yellow-500">Age:</label>
+          <p class="text-lg">30</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2 text-yellow-500">Mobile Number:</label>
+          <p class="text-lg">123-456-7890</p>
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-2 text-yellow-500">Experience:</label>
+          <p class="text-lg">5 years</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    /* Custom yellow box shadow with increased size and blur */
+    .box-shadow-yellow {
+      box-shadow: 0 5px 10px rgba(255, 255, 0, 0.5);
+    }
+  </style>
+</body>
+
+</html>
