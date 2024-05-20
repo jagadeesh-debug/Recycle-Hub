@@ -12,47 +12,58 @@
 </head>
 
 <body>
-    <div class="border border-2 border-green-900 h-screen w-screen flex justify-center items-center">
-        <div class="border border-2 flex h-3/4 w-1/2 flex-col ">
-            <div class="border border-2 flex h-1/4 w-full flex justify-center items-center bg-black">
-                <input class=" outline-none w-full h-1/4 " placeholder="Enter Location" />
+    <div class="h-screen w-screen flex justify-center items-center">
+        <div class="border border-2 flex h-full w-full md:flex md:h-3/4 md:w-2/3 flex-col">
+            <div class="border border-2 flex h-1/4 w-full justify-center items-center bg-black">
+                <input class="outline-none w-full h-1/4" placeholder="Enter Location" />
             </div>
-            <div class="border border-3 h-3/4 w-full flex bg-black flex-col justify-center  items-center">
-                <div class="w-1/2 h-1/2  flex items-center">
-                    <div class="w-1/4 h-1/2 rounded-full bg-cover ml-1" style="background-image: url(p1.jpeg);"></div>
-                    <div class="w-full h-full  flex justify-center items-center flex-col">
+            <div class="border border-3 border-red-500 h-full w-full flex bg-black flex-col items-center ">
+                <div class="w-full h-2/3 md:w-1/2 flex items-center gap-0">
+                    <div class="flex-shrink-0">
+                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover" src="p1.jpeg" alt="Profile Image"/>
+                    </div>
+                    <div class="w-full h-full flex justify-center items-start ml-5 flex-col ">
                         NAME : XYZ<br>
                         AGE : 33<br>
-                        Location:VISAKHAPTNAM<br>
+                        Location: VISAKHAPATNAM<br>
                         <div class="flex flex-row gap-4 mt-5">
-                            <button class=" flex justify-start bg-zinc-50 text-yellow-400 rounded-full" onclick="alert('you will be notified soon')">Request</button>
-                            <button class=" flex justify-start bg-zinc-50 text-yellow-500 rounded-full"><a href="Profile.html">    Check profile</a></button>  </div> 
+                            <button class="flex justify-start bg-zinc-50 text-yellow-400 rounded-full px-2 py-1 md:px-4 md:py-2" onclick="alert('you will be notified soon')">Request</button>
+                            <button class="flex justify-start bg-zinc-50 text-yellow-500 rounded-full px-2 py-1 md:px-4 md:py-2"><a href="Profile.html">Check profile</a></button>
+                        </div>
                     </div>
                 </div>
-                <div class="w-1/2 h-1/2  flex items-center mt-3 mb-3">
-                    
-                    <div class="w-1/4 h-1/2 rounded-full bg-cover ml-1" style="background-image: url(p3.jpeg);"></div>
-                    <div class="w-full h-full  flex justify-center items-center flex-col">
-                        NAME : XYZ<br>
-                        AGE : 33<br>
-                        Location:VISAKHAPTNAM<br>
-                        <div class="flex flex-row gap-4 mt-5">
-                    <button class=" flex justify-start bg-zinc-50  text-yellow-400 rounded-full">Request</button>
-                    <button class=" flex justify-start bg-zinc-50 text-yellow-500 rounded-full">Check profile</button>  </div>                  </div>
-                </div>
-                <div class="w-1/2 h-1/2  flex items-center">
-                    <div class="w-1/4 h-1/2 rounded-full bg-cover ml-1" style="background-image: url(p4.jpeg);"></div>
-                    <div class="w-full h-full  flex justify-center items-center flex-col">
-                        NAME : XYZ<br>
-                        AGE : 33<br>
-                        Location:VISAKHAPTNAM<br>
-                        <div class="flex flex-row gap-4 mt-5">
-                            <button class=" flex justify-start bg-zinc-50 text-yellow-400 rounded-full max-w-fit">Request</button>
-                            <button class=" flex justify-start bg-zinc-50 text-yellow-500 rounded-full">Check profile</button>  </div> 
+                <div class="w-full h-2/3 md:w-1/2 flex items-center mt-3 mb-3">
+                    <div class="flex-shrink-0">
+                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover" src="p3.jpeg" alt="Profile Image"/>
                     </div>
-                </div>            </div>
+                    <div class="w-full h-full flex justify-center ml-5 flex-col ">
+                        NAME : XYZ<br>
+                        AGE : 33<br>
+                        Location: VISAKHAPATNAM<br>
+                        <div class="flex flex-row gap-4 mt-5">
+                            <button class="flex justify-start bg-zinc-50 text-yellow-400 rounded-full px-2 py-1 md:px-4 md:py-2" onclick="alert('you will be notified soon')">Request</button>
+                            <button class="flex justify-start bg-zinc-50 text-yellow-500 rounded-full px-2 py-1 md:px-4 md:py-2"><a href="Profile.html">Check profile</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full h-2/3 md:w-1/2 md:h-2/3 flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover" src="p4.jpeg" alt="Profile Image"/>
+                    </div>
+                    <div class="w-full h-full flex justify-center ml-5 flex-col ">
+                        NAME : XYZ<br>
+                        AGE : 33<br>
+                        Location: VISAKHAPATNAM<br>
+                        <div class="flex flex-row gap-4 mt-5">
+                            <button class="flex justify-start bg-zinc-50 text-yellow-400 rounded-full px-2 py-1 md:px-4 md:py-2" onclick="alert('you will be notified soon')">Request</button>
+                            <button class="flex justify-start bg-zinc-50 text-yellow-500 rounded-full px-2 py-1 md:px-4 md:py-2"><a href="Profile.html">Check profile</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
 </body>
 
 </html>
