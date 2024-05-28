@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="global.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"
         src="script.js">
-
-
         </script>
+ <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
     <style>
         .hidden {
             display: none;
@@ -25,35 +25,53 @@
 
 <body class="bg-black">
     <div class="h-screen w-screen md:w-screen h-screen flex flex-col">
-        <nav class="w-full  fixed p-5 z-50 flex justify-end bg-black ">
-            <div class="flex">
-                <div class="md:hidden ">
-                    <button id="menu-toggle" class="text-yellow-400 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
+        <nav class="w-full fixed p-5 z-50 flex justify-end bg-black">
+            <div class="flex md:hidden" id="menuToggle">
+                <box-icon name='menu-alt-left' id="menuIcon" class="text-yellow-300"></box-icon>
+                <box-icon name='x' id="menuClose" class="hidden "></box-icon>
             </div>
-            <ol id="menu" class="hidden md:flex flex-end gap-x-24 w-full text-xl justify-end items-center mt-5 md:mt-0">
+            <ul id="menu" class="hidden md:flex gap-x-24 w-full text-xl justify-end items-center mt-5 md:mt-0">
                 <li class="hover:border-yellow-300"><a href="#home" class="text-yellow-400">Home</a></li>
                 <li><a href="#workflow" class="text-yellow-400">Workflow</a></li>
                 <li><a href="#about" class="text-yellow-400">About us</a></li>
-                <li><a href="PickUp.html" class="text-yellow-400"> Request Pickup</a></li>
+                <li><a href="PickUp.html" class="text-yellow-400">Request Pickup</a></li>
                 <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
-                    <button><a href="login.html" class="text-black">Sign In</a> </button>
+                    <button><a href="login.html" class="text-black">Sign In</a></button>
                 </li>
-            </ol>
+            </ul>
+        
+        
+        <!-- Separate container for mobile menu -->
+        <div class="bg-black w-1/2 fixed md:hidden inset-0 z-100 h-fit hidden flex justify-center left-52 top-10 border-4" id="mobileMenuContainer">
+            <ul id="mobilemenu" class="space-y-4 py-2 px-2 text-xl">
+                <li class="hover:border-yellow-300"><a href="#home" class="text-yellow-400">Home</a></li>
+                <li><a href="#workflow" class="text-yellow-400">Workflow</a></li>
+                <li><a href="#about" class="text-yellow-400">About us</a></li>
+                <li><a href="PickUp.html" class="text-yellow-400">Request Pickup</a></li>
+                <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
+                    <button><a href="login.html" class="text-black">Sign In</a></button>
+                </li>
+            </ul>
+        </div>
         </nav>
-
+        
+        
         <script>
-            document.getElementById('menu-toggle').addEventListener('click', function () {
-                const menu = document.getElementById('menu');
-                menu.classList.toggle('hidden');
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuToggleIcon = document.getElementById('menuToggle');
+                const menuIcon = document.getElementById('menuIcon');
+                const menuClose = document.getElementById('menuClose');
+                const mobileMenuContainer = document.getElementById('mobileMenuContainer');
+        
+                menuToggleIcon.addEventListener('click', function () {
+                    mobileMenuContainer.classList.toggle('hidden');
+                    menuIcon.classList.toggle('hidden');
+                    menuClose.classList.toggle('hidden');
+                });
             });
         </script>
+        
+        
         <div class="bg-black min-h-screen min-w-screen flex  flex-col justify-center items-center  " id="home">
             <h3 class="font-bold text-2xl text-center text-white mt-36   ">THE PLASTIC PROBLEM</h3>
             <div class="grid grid-cols-1 h-full w-full lg:grid-cols-2 lg:grid-rows-2 ">
@@ -144,6 +162,7 @@
             </div>
         </div>
     </div>
+    <script src="nav.js"></script>
 </body>
 
 </html>
