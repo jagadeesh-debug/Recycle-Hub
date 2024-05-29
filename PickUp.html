@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+     <script src="nav.js"></script>
+     <link rel="icon" type="image/x-icon" href="favicon.png">
 
-
-    </script>
-    <title>Document</title>
+    <title>Profile</title>
 </head>
 
 <body>
-    <div class="h-screen w-screen flex justify-center items-center">
+    <box-icon name='arrow-back' size="42px"  onclick="navtoIndex()" ></box-icon>
+    <div class="h-screen w-screen flex flex-col justify-center items-center ">
         <div class="border border-2 flex h-full w-full md:flex md:h-3/4 md:w-2/3 flex-col">
             <div class="border border-2 flex h-1/4 w-full justify-center items-center bg-black">
                 <input class="outline-none w-full h-1/4" placeholder="Enter Location" />
             </div>
-            <div class="border border-3 border-red-500 h-full w-full flex bg-black flex-col items-center ">
+            <div class=" h-full w-full flex bg-black flex-col items-center ">
                 <div class="w-full h-2/3 md:w-1/2 flex items-center gap-0">
                     <div class="flex-shrink-0">
                         <img class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover" src="p1.jpeg" alt="Profile Image"/>

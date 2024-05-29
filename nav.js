@@ -24,3 +24,12 @@ document.getElementById("menu").addEventListener('click', function () {
         }, 300);
     }
 }); 
+
+
+function navtoIndex(){
+    window.location.href = "index.html"
+}
+
+function navtoPickUp(){
+    window.location.href = "PickUp.html"
+}
