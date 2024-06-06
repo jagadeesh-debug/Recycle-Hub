@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+</head>
+
+<body>
+    <div class="container">
+        <form class="f1" method="post">
+            {%csrf_token%}
+            <h2>Login Here</h2>
+            <br>
+            <div class="box1" id="b1">
+                <input type="text" placeholder="UserName"name="username">
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="box1" id="b2">
+                <input type="password" placeholder="Password"name="password">
+                <i class='bx bxs-lock-alt'></i>
+            </div><br>
+            <div class="b3"> <label>Remember Me <input type="checkbox"></label> <a href="#">forgot password ?</a></div>
+            <br>
+            <div>
+                <button class="btn" type="submit">Login</button>
+            </div>
+            <br>
+            <div class="b4">
+                Not a Member ? <a href="{% url 'signup' %}">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
