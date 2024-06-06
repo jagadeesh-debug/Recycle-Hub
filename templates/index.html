@@ -1,0 +1,206 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static "css/global.css"%}">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"
+        src="script.js">
+        </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="icon" type="image/x-icon" href="{% static "images/favicon.png"%}">
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .bg-yellow-circle {
+            background-color: #FAD618;
+            border-radius: 9999px;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+
+        }
+
+        #mobileMenuContainer {
+            animation: slideIn 1s ease-in-out forwards;
+        }
+    </style>
+    <title>Recycle Hub</title>
+</head>
+
+<body class="">
+    <div class="h-screen w-screen md:w-screen h-screen flex flex-col">
+        <nav class="w-full fixed p-5 z-50 flex justify-end bg-black">
+            <div class="flex md:hidden" id="menuToggle">
+                <box-icon name='menu-alt-left' id="menuIcon" class="text-yellow-300" size="40px"
+                    style="fill: yellow;"></box-icon>
+                <box-icon name='x' id="menuClose" class="hidden" size="40px" style="fill: yellow;"></box-icon>
+            </div>
+            <ul id="menu" class="hidden md:flex gap-x-24 w-full text-xl justify-end items-center mt-5 md:mt-0">
+                <li class="hover:border-yellow-300"><a href="#home" class="text-yellow-400">Home</a></li>
+                <li><a href="#workflow" class="text-yellow-400">Workflow</a></li>
+                <li><a href="#about" class="text-yellow-400">About us</a></li>
+                <li><a href="{%url 'pickup'%}"class="text-yellow-400">Request Pickup</a></li>
+                <li><a href="#Myaccount" class="text-yellow-400">Account</a></li>
+                <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
+                    <button><a href="{%url 'login'%}" class="text-black">SignIn/SignUp</a></button>
+                </li>
+            </ul>
+
+
+            <!-- Separate container for mobile menu -->
+            <div class="bg-black	 w-full fixed md:hidden inset-0 z-100 h-full  hidden flex justify-center  top-16"
+                id="mobileMenuContainer">
+                <ul id="mobilemenu" class="space-y-16 py-2 px-2 text-xl ">
+                    <li class="hover:border-yellow-300"><a href="#home" class="text-yellow-400">Home</a></li>
+                    <li><a href="#workflow" class="text-yellow-400">Workflow</a></li>
+                    <li><a href="#about" class="text-yellow-400">About us</a></li>
+                    <li><a href="PickUp.html" class="text-yellow-400">Request Pickup</a></li>
+                    <li><a href="#Myaccount" class="text-yellow-400">Account</a></li>
+                    <li
+                        class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
+                        <button><a href="login.html" class="text-black">Sign In</a></button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuToggleIcon = document.getElementById('menuToggle');
+                const menuIcon = document.getElementById('menuIcon');
+                const menuClose = document.getElementById('menuClose');
+                const mobileMenuContainer = document.getElementById('mobileMenuContainer');
+
+                menuToggleIcon.addEventListener('click', function () {
+                    mobileMenuContainer.classList.toggle('hidden');
+                    menuIcon.classList.toggle('hidden');
+                    menuClose.classList.toggle('hidden');
+                });
+            });
+        </script>
+
+
+        <div class="bg-black min-h-screen min-w-screen flex  flex-col justify-center items-center  " id="home">
+            <h3 class="font-bold text-2xl text-center text-white mt-36   ">THE PLASTIC PROBLEM</h3>
+            <div class="grid grid-cols-1 h-full w-full lg:grid-cols-2 lg:grid-rows-2 ">
+                <div class="flex justify-center items-center p-4 md:w-1/2 lg:ml-36 ">
+                    <img src="{% static "images/pop.png"%}" alt="plastic" class="w-1/3 h-1/2 md:w-1/3 md:h-1/3" />
+                    <p class="text-white max-w-fit ml-4 s text-balance md:text-pretty ">1.8 billion tonnes of GHG
+                        emissions generated by plastics lifecycle.</p>
+                </div>
+                <div class="flex justify-center items-center p-4 md:w-1/2   ">
+                    <img src="{% static "images/dust.png"%}" alt="plastic" class="w-1/3 h-1/2 md:w-1/3 md:h-1/3" />
+                    <p class="text-white max-w-fit ml-4 text-md text-pretty">Every year more than 390 million tonnes of
+                        plastic are produced globally.</p>
+                </div>
+                <div class="flex justify-center items-center p-4  md:w-1/2  lg:ml-36">
+                    <img src="{% static "images/m.png"%}" alt="plastic" class="w-1/3 h-1/2 md:w-1/3 md:h-1/3 " />
+                    <p class="text-white max-w-fit text-md ml-4 text-pretty">More than 22 million tonnes of plastic
+                        waste leak into the environment and oceans yearly.</p>
+                </div>
+                <div class="flex justify-center items-center p-4 md:w-1/2 ">
+                    <img src="{%static "images/g.png"%}" alt="plastic" class="w-1/3 h-1/2 md:w-1/3 md:h-1/3" />
+                    <p class="text-white max-w-fit text-md ml-4 text-pretty">Globally, only 9% of plastic waste is
+                        recycled, 50% is landfilled, 22% is mismanaged, and 19% incinerated.</p>
+                </div>
+            </div>
+        </div>
+        <!-- workflow is still not responsive need to adjust it yet -->
+        <div class="hidden relative md:flex flex-col md:items-center h-200vh top-1/5 w-full bg-black text-white"
+            id="workflow">
+            <div class="absolute inset-y-0 left-1/2 transform-translate-x-1/2 w-8 md:w-15 bg-yellow-circle "></div>
+
+            <div class="relative w-full max-w-4xl px-4 py-8  ">
+                <div
+                    class="flex flex-col items-end  md:ml-80 md:flex-row md:items-start md:space-x-8 relative mb-[5em]">
+                    <img src="{% static "images/f.jpg"%}" class="w-24 h-24 md:ml-28 md:w-32 md:h-32 rounded-full mb-4 md:mb-0"
+                        alt="Waste Collection">
+                    <div class="max-w-md md:ml-56">
+                        <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">WASTE COLLECTION</h3>
+                        <p class="text-md text-pretty left-1/2">Involves gathering, and transporting discarded plastics
+                            to recycling
+                            facilities or disposal sites for proper management.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col items-end  md:mr-96 md:flex-row md:items-start md:space-x-8 relative mb-[5em]">
+                    <div class="max-w-md text-center md:text-left ">
+                        <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">SEGREGATION</h3>
+                        <p class="text-lg ">Meticulous collection and segregation processes ensure that plastic waste is
+                            efficiently sorted for recycling.</p>
+                    </div>
+                    <img src="{% static "images/h.jpg"%}"
+                        class="w-24 h-24 relative left-[-0.5em] border md:w-32 md:h-32 rounded-full mb-4 md:mb-0"
+                        alt="Segregation">
+                </div>
+
+                <div
+                    class="flex flex-col items-end  md:ml-80 md:flex-row md:items-start md:space-x-8 relative mb-[5em]">
+                    <img src="{% static "images/t.jpg"%}" class="w-24 h-24 md:ml-28  md:w-32 md:h-32 rounded-full mb-4 md:mb-0"
+                        alt="Logistics">
+                    <div class="max-w-md text-center md:text-left">
+                        <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">LOGISTICS</h3>
+                        <p class="text-lg">Streamlining plastic logistics to minimize environmental impact and optimize
+                            supply chain efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-start mr-96  md:flex-row md:items-start md:space-x-8 relative mb-[5em]">
+                    <div class="max-w-md text-center md:text-left relative left-[-1em] ">
+                        <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">RECYCLING</h3>
+                        <p class="text-lg ">Transforming plastic waste into new products within the confines of a
+                            recycling plant, forging a sustainable future.</p>
+                    </div>
+                    <img src="{% static "images/recc.jpg"%}"
+                        class="w-24 h-24 relative left-[-0.5em] md:w-32 md:h-32 rounded-full mb-4 md:mb-0"
+                        alt="Recycling">
+                </div>
+
+                <div class="flex flex-col items-end  md:ml-80 md:flex-row md:items-start md:space-x-8 mb-8">
+                    <img src="{% static "images/pl.jpg"%}" class="w-24 h-24 ml-28 md:w-32 md:h-32 rounded-full mb-4 md:mb-0" alt="Reuse">
+                    <div class="max-w-md text-center md:text-left">
+                        <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">REUSE</h3>
+                        <p class="text-lg">Plastic reuse fosters sustainable development by minimizing waste and
+                            conserving resources for future generations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-black h-screen w-screen " id="about">
+            <div class="h-screen w-screen relative bg-black">
+                <div class="AboutU w-3/4 h-1/2 fs-sm top-[100px] md:top-[201px] absolute text-yellow-500 md:left-[1em]"
+                    style="font-size: 69px; font-family: Inter; font-weight: 900; word-wrap: break-word" id="about">
+                    About Us</div>
+                <div class=" text-md  text-center md:text-left md:w-1/2 md:h-1/3 text-pretty md:text-balance top-[200px] md:top-[375px] md:left-[2em] absolute"
+                    style=" color: white; font-size: 24px; font-family: Inter; font-weight: 800; word-wrap: break-word">
+                    The mission of our Team is to tackle the global plastic pollution crisis head-on by implementing
+                    innovative recycling solutions that minimize environmental harm and promote circular economy
+                    principles.<br /><br /> Through our collective efforts, we strive to reduce the impact of plastic
+                    waste while maximizing resource recovery and fostering sustainable practices.</div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static "js/nav.js"%}"></script>
+</body>
+
+</html>
