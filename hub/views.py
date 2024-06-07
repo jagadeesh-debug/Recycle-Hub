@@ -26,14 +26,10 @@ def SignupView(request):
         form = Signup(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password1")
-            log = authenticate(request, username=username, password=password)
-            if log is not None:
-                login(request, log)
-                return redirect("home")
-
-    return render(request, "signup.html")
+            return redirect("login")
+    else:
+        form = Signup()
+    return render(request, "signup.html", {"form": form})
 
 
 def PickupView(request):

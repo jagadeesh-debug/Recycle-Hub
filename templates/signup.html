@@ -17,21 +17,22 @@
             {%csrf_token%}
             <h2>Sign Up</h2>
             <div class="b1">
-                <label class="l1">User Name <input type="text" class="t1" placeholder="Jagadeesh"
-                        name="username"></label>
+                <label class="l1">User Name {{form.username}}</label>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="b2">
-                <label>Email<input type="email" class="t2" placeholder="xyz@gmail.com" name="email"></label>
+                <label>Email {{form.email}}</label>
                 <i class='bx bxs-envelope'></i>
             </div>
             <div class="b2">
-                <label>Password<input type="password" placeholder="uwvghd@3" class="t4" name="password">
+                <label>Password {{form.password1}}
                 </label>
                 <i class='bx bxs-lock'></i>
             </div>
-            <div class="b3">
-                <label>Phone No<input type="text" class="t3" placeholder="123456789" name="mobile"></label>
+            <div class="b2">
+                <label>Confirm Password {{form.password2}}
+                </label>
+                <i class='bx bxs-lock'></i>
             </div>
             <div class="b4">
                 Already a User ?<a href="{% url 'login' %}">Log In</a>
