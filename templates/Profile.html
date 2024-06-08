@@ -23,21 +23,21 @@
         <img src="{% static 'images/p1.jpeg' %}" alt="User Image" class="w-full h-48 object-cover object-center">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="absolute bottom-0 left-0 right-0 text-center">
-          <p class="text-white font-bold text-lg">ABHI</p>
+          <p class="text-white font-bold text-lg">Jag</p>
         </div>
       </div>
       <div class="p-4">
         <div class="mb-4">
           <label class="block text-sm font-bold mb-2 text-yellow-500">Name:</label>
-          <p class="text-lg">John Doe</p>
+          <p class="text-lg">{{object.username}}</p>
         </div>
         <div class="mb-4">
           <label class="block text-sm font-bold mb-2 text-yellow-500">Age:</label>
           <p class="text-lg">30</p>
         </div>
         <div class="mb-4">
-          <label class="block text-sm font-bold mb-2 text-yellow-500">Mobile Number:</label>
-          <p class="text-lg">123-456-7890</p>
+          <label class="block text-sm font-bold mb-2 text-yellow-500">E-mail:</label>
+          <p class="text-lg">{{object.email}}</p>
         </div>
         <div>
           <label class="block text-sm font-bold mb-2 text-yellow-500">Experience:</label>

@@ -15,6 +15,7 @@
     <div class="container">
         <form class="f2" method="post">
             {%csrf_token%}
+            <button><a href="{%url 'login'%}">&larr;</a></button>
             <h2>Sign Up</h2>
             <div class="b1">
                 <label class="l1">User Name {{form.username}}</label>

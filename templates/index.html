@@ -57,11 +57,20 @@
                 <li class="hover:border-yellow-300"><a href="#home" class="text-yellow-400">Home</a></li>
                 <li><a href="#workflow" class="text-yellow-400">Workflow</a></li>
                 <li><a href="#about" class="text-yellow-400">About us</a></li>
-                <li><a href="{%url 'pickup'%}"class="text-yellow-400">Request Pickup</a></li>
-                <li><a href="#Myaccount" class="text-yellow-400">Account</a></li>
+                <li><a href="{%url 'pickup'%}" class="text-yellow-400">Request Pickup</a></li>
+                {%if user.is_authenticated%}
+                <li><a href="{%url 'profile' pk=request.user.pk%}" class="text-yellow-400">Account</a></li>
                 <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
-                    <button><a href="{%url 'login'%}" class="text-black">SignIn/SignUp</a></button>
+                    <button><a href="{%url 'logout'%}" class="text-black">Logout</a></button>
                 </li>
+                {%else%}
+                <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
+                    <button><a href="{%url 'signup'%}" class="text-black">SignUp</a></button>
+                </li>
+                <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
+                    <button><a href="{%url 'login'%}" class="text-black">SignIn</a></button>
+                </li>
+                {%endif%}
             </ul>
 
 
@@ -132,8 +141,8 @@
             <div class="relative w-full max-w-4xl px-4 py-8  ">
                 <div
                     class="flex flex-col items-end  md:ml-80 md:flex-row md:items-start md:space-x-8 relative mb-[5em]">
-                    <img src="{% static "images/f.jpg"%}" class="w-24 h-24 md:ml-28 md:w-32 md:h-32 rounded-full mb-4 md:mb-0"
-                        alt="Waste Collection">
+                    <img src="{% static "images/f.jpg"%}"
+                        class="w-24 h-24 md:ml-28 md:w-32 md:h-32 rounded-full mb-4 md:mb-0" alt="Waste Collection">
                     <div class="max-w-md md:ml-56">
                         <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">WASTE COLLECTION</h3>
                         <p class="text-md text-pretty left-1/2">Involves gathering, and transporting discarded plastics
@@ -156,8 +165,8 @@
 
                 <div
                     class="flex flex-col items-end  md:ml-80 md:flex-row md:items-start md:space-x-8 relative mb-[5em]">
-                    <img src="{% static "images/t.jpg"%}" class="w-24 h-24 md:ml-28  md:w-32 md:h-32 rounded-full mb-4 md:mb-0"
-                        alt="Logistics">
+                    <img src="{% static "images/t.jpg"%}"
+                        class="w-24 h-24 md:ml-28  md:w-32 md:h-32 rounded-full mb-4 md:mb-0" alt="Logistics">
                     <div class="max-w-md text-center md:text-left">
                         <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">LOGISTICS</h3>
                         <p class="text-lg">Streamlining plastic logistics to minimize environmental impact and optimize
@@ -177,7 +186,8 @@
                 </div>
 
                 <div class="flex flex-col items-end  md:ml-80 md:flex-row md:items-start md:space-x-8 mb-8">
-                    <img src="{% static "images/pl.jpg"%}" class="w-24 h-24 ml-28 md:w-32 md:h-32 rounded-full mb-4 md:mb-0" alt="Reuse">
+                    <img src="{% static "images/pl.jpg"%}"
+                        class="w-24 h-24 ml-28 md:w-32 md:h-32 rounded-full mb-4 md:mb-0" alt="Reuse">
                     <div class="max-w-md text-center md:text-left">
                         <h3 class="text-yellow-400 text-xl md:text-2xl font-bold mb-2">REUSE</h3>
                         <p class="text-lg">Plastic reuse fosters sustainable development by minimizing waste and

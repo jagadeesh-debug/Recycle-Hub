@@ -13,17 +13,18 @@
 
 <body>
     <div class="container">
-        <form class="f1" method="post">
+        <form class="f1" method="post" autocomplete="off">
             {%csrf_token%}
+            <button><a href="{%url 'home'%}">&larr;</a></button>
             <h2>Login Here</h2>
             <br>
             <div class="box1" id="b1">
-                <input type="text" placeholder="UserName"name="username">
+                <input type="text" placeholder="Username" name="username" autocomplete="off">
                 <i class='bx bxs-user'></i>
             </div>
 
             <div class="box1" id="b2">
-                <input type="password" placeholder="Password"name="password">
+                <input type="password" placeholder="Password" name="password" autocomplete="off">
                 <i class='bx bxs-lock-alt'></i>
             </div><br>
             <div class="b3"> <label>Remember Me <input type="checkbox"></label> <a href="#">forgot password ?</a></div>
