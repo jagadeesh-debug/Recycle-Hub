@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.views.generic import DetailView
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import get_user_model
-from .models import Custom_User
+from django.contrib.auth.models import User
 from .forms import Signup
+
+user = get_user_model
 
 
 # Create your views here.
@@ -26,15 +29,21 @@ def SignupView(request):
         form = Signup(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password1")
-            log = authenticate(request, username=username, password=password)
-            if log is not None:
-                login(request, log)
-                return redirect("home")
+            return redirect("login")
+    else:
+        form = Signup()
+    return render(request, "signup.html", {"form": form})
 
-    return render(request, "signup.html")
+
+class ProfileView(DetailView):
+    model=User
+    template_name="Profile.html"
 
 
 def PickupView(request):
     return render(request, "pickup.html")
+
+
+def Logout(request):
+    logout(request)
+    return redirect("login")
