@@ -65,9 +65,6 @@
                 </li>
                 {%else%}
                 <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
-                    <button><a href="{%url 'signup'%}" class="text-black">SignUp</a></button>
-                </li>
-                <li class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
                     <button><a href="{%url 'login'%}" class="text-black">SignIn</a></button>
                 </li>
                 {%endif%}
@@ -81,12 +78,19 @@
                     <li class="hover:border-yellow-300"><a href="#home" class="text-yellow-400">Home</a></li>
                     <li><a href="#workflow" class="text-yellow-400">Workflow</a></li>
                     <li><a href="#about" class="text-yellow-400">About us</a></li>
-                    <li><a href="PickUp.html" class="text-yellow-400">Request Pickup</a></li>
-                    <li><a href="#Myaccount" class="text-yellow-400">Account</a></li>
+                    <li><a href="{%url "pickup"%}"class="text-yellow-400">Request Pickup</a></li>
+                    {%if user.is_authenticated%}
+                    <li><a href="{%url "profile" pk=request.user.pk %}"class="text-yellow-400">Account</a></li>
                     <li
                         class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
-                        <button><a href="login.html" class="text-black">Sign In</a></button>
+                        <button><a href="{%url "logout"%}" class="text-black">Log out</a></button>
                     </li>
+                    {%else%}
+                    <li
+                        class="bg-yellow-500 w-24 text-lime-950 border border-none rounded-full text-center p-2 text-black">
+                        <button><a href="{%url "login"%}" class="text-black">Sign In</a></button>
+                    </li>
+                    {%endif%}
                 </ul>
             </div>
         </nav>

@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from .forms import Signup
+from .models import Map
 
 user = get_user_model
 
@@ -36,12 +37,14 @@ def SignupView(request):
 
 
 class ProfileView(DetailView):
-    model=User
-    template_name="Profile.html"
+    model = User
+    template_name = "Profile.html"
 
 
-def PickupView(request):
-    return render(request, "pickup.html")
+class PickupView(ListView):
+    model = Map
+    template_name = "Pickup.html"
+    paginate_by = 10
 
 
 def Logout(request):

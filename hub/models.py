@@ -13,3 +13,7 @@ class Custom_User(AbstractUser):
 
     def __str__(self):
         return self.username
+class Map(models.Model):
+    place=models.TextField(max_length="20")
+    def __str__(self):
+        return self.place
