@@ -26,7 +26,8 @@
             <div class="box1" id="b2">
                 <input type="password" placeholder="Password" name="password" autocomplete="off">
                 <i class='bx bxs-lock-alt'></i>
-            </div><br>
+            </div>
+            <input type="checkbox" id="show-password" onclick="togglePassword()"> Show Password<br>
             <div class="b3"> <label>Remember Me <input type="checkbox"></label> <a href="#">forgot password ?</a></div>
             <br>
             <div>
@@ -38,6 +39,16 @@
             </div>
         </form>
     </div>
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
 </body>
 
 </html>

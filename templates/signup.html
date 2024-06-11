@@ -29,6 +29,7 @@
                 <label>Password {{form.password1}}
                 </label>
                 <i class='bx bxs-lock'></i>
+                <input type="checkbox" id="show-password" onclick="togglePassword()"> Show Password<br>
             </div>
             <div class="b2">
                 <label>Confirm Password {{form.password2}}
@@ -42,6 +43,18 @@
                 <button class="btn">Sign Up</button>
             </div>
         </form>
+        <script>
+            function togglePassword() {
+                var passwordFields = document.querySelectorAll('input[type="password"]');
+                passwordFields.forEach(function (field) {
+                    if (field.type === "password") {
+                        field.type = "text";
+                    } else {
+                        field.type = "password";
+                    }
+                });
+            }
+        </script>
     </div>
 </body>
 
